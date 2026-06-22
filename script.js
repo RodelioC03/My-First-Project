@@ -1,6 +1,8 @@
 console.log("JavaScript Loaded!");
-function addTask() {
 
+let button = document.getElementById("addBtn");
+
+button.addEventListener("click", function() {
     let input = document.getElementById("taskInput");
     let task = input.value;
 
@@ -15,15 +17,4 @@ function addTask() {
     document.getElementById("taskList").appendChild(li);
 
     input.value = "";
-}
-let li = document.createElement("li");
-li.textContent = task;
-
-document.getElementById("taskList").appendChild(li);
-let li = document.createElement("li");
-li.textContent = task;
-
-document.getElementById("taskList").appendChild(li);
-li.addEventListener("click", function() {
-    li.style.textDecoration = "line-through";
 });
