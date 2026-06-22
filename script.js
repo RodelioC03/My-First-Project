@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Student Task Manager</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+console.log("JavaScript Loaded!");
 
-    <h1>Student Task Manager</h1>
+let button = document.getElementById("addBtn");
 
-    <input type="text" id="taskInput" placeholder="Enter task">
-    <button id="addBtn">Add Task</button>
+button.addEventListener("click", function() {
+    let input = document.getElementById("taskInput");
+    let task = input.value;
 
-    <ul id="taskList"></ul>
+    if (task === "") {
+        alert("Please enter a task.");
+        return;
+    }
 
-    <script src="script.js"></script>
-</body>
-</html>
+    let li = document.createElement("li");
+    li.textContent = task;
+
+    document.getElementById("taskList").appendChild(li);
+
+    input.value = "";
+});
