@@ -465,4 +465,35 @@ button:hover {
     .subject-add {
         grid-column: span 1;
     }
+    @media(max-width:768px){
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .task-form{
+        grid-template-columns:1fr;
+    }
+
+    .subject-add{
+        grid-column:span 1;
+        flex-direction:column;
+    }
+
+    .calendar-grid{
+        font-size:11px;
+    }
+
+    .calendar-day{
+        min-height:45px;
+    }
+
+    .progress-row{
+        flex-direction:column;
+    }
+}
 }
