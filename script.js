@@ -1,8 +1,6 @@
 console.log("JavaScript Loaded!");
 
-let button = document.getElementById("addBtn");
-
-button.addEventListener("click", function() {
+document.getElementById("addBtn").addEventListener("click", function() {
     let input = document.getElementById("taskInput");
     let task = input.value;
 
