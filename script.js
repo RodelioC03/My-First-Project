@@ -1,11 +1,16 @@
 console.log("JavaScript Loaded!");
 
 document.getElementById("addBtn").addEventListener("click", function() {
+<<<<<<< HEAD
     let taskInput = document.getElementById("taskInput");
     let deadlineInput = document.getElementById("deadlineInput");
 
     let task = taskInput.value;
     let deadline = new Date(deadlineInput.value);
+=======
+    let input = document.getElementById("taskInput");
+    let task = input.value;
+>>>>>>> b783d83424e63d604caa5692d130dde6da78fd0b
 
     if (task === "" || deadlineInput.value === "") {
         alert("Please enter a task and deadline.");
@@ -33,6 +38,11 @@ document.getElementById("addBtn").addEventListener("click", function() {
 
     document.getElementById("taskList").appendChild(li);
 
+<<<<<<< HEAD
     taskInput.value = "";
     deadlineInput.value = "";
 });
+=======
+    input.value = "";
+});
+>>>>>>> b783d83424e63d604caa5692d130dde6da78fd0b
