@@ -1,18 +1,191 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Task Manager</title>
+    <title>TaskFlow - Student Task Manager</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Student Task Manager</h1>
+<div class="app-layout">
 
-    <input type="text" id="taskInput" placeholder="Enter task">
-<button id="addBtn">Add Task</button>
+    <aside class="left-sidebar">
+        <div class="logo">✅ Task<span>Flow</span></div>
+        <p class="tagline">Stay organized. Achieve more.</p>
 
-    <ul id="taskList"></ul>
+        <nav>
+            <a href="#dashboard">🏠 Dashboard</a>
+            <a href="#tasks">📋 Tasks</a>
+            <a href="#today">📅 Today</a>
+            <a href="#calendarPanel">🗓 Calendar</a>
+            <a href="#subjects">📚 Subjects</a>
+            <a href="#completed">✅ Completed</a>
+            <a href="#analytics">📊 Analytics</a>
+        </nav>
 
-    <script src="script.js"></script>
+        <div class="side-quote">
+            <h2>“</h2>
+            <p>Discipline today leads to success tomorrow.</p>
+            <small>— Unknown</small>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section id="dashboard" class="hero">
+            <h1>Good Evening, Student! 👋</h1>
+            <p>Let's make today productive.</p>
+        </section>
+
+        <section class="task-form">
+
+            <div>
+                <label>Task</label>
+                <input type="text" id="taskInput" placeholder="Enter task...">
+            </div>
+
+            <div>
+                <label>Deadline</label>
+                <input type="datetime-local" id="deadlineInput">
+            </div>
+
+            <div>
+                <label>Priority</label>
+                <select id="priorityInput">
+                    <option value="High">High</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Subject</label>
+                <select id="subjectInput">
+                    <option value="General">General</option>
+                </select>
+            </div>
+
+            <div class="subject-add">
+                <input type="text" id="newSubjectInput" placeholder="New subject...">
+                <button id="addSubjectBtn" type="button">Add Subject</button>
+            </div>
+
+            <button id="addBtn" type="button">Add Task</button>
+
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <h3 id="totalTasks">0</h3>
+                <p>Total Tasks</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="todayTasks">0</h3>
+                <p>Due Today</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="highTasks">0</h3>
+                <p>High Priority</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="completedTasks">0</h3>
+                <p>Completed</p>
+            </div>
+        </section>
+
+        <section id="tasks" class="task-layout">
+            <div class="priority-column high-column">
+                <h2>🔥 High Priority</h2>
+                <ul id="highList"></ul>
+            </div>
+
+            <div class="priority-column medium-column">
+                <h2>🟡 Medium Priority</h2>
+                <ul id="mediumList"></ul>
+            </div>
+
+            <div class="priority-column low-column">
+                <h2>🟢 Low Priority</h2>
+                <ul id="lowList"></ul>
+            </div>
+        </section>
+
+        <section id="subjects" class="subjects-panel">
+            <h2>📚 Subjects</h2>
+            <div id="subjectList" class="subject-list"></div>
+        </section>
+
+        <section id="analytics" class="analytics-panel">
+            <h2>📊 This Week's Progress</h2>
+            <div class="progress-row">
+                <div class="progress-circle" id="progressCircle">0%</div>
+                <div>
+                    <p id="completedText">Tasks Completed: 0/0</p>
+                    <p id="studyHoursText">Study Hours: 0 hrs</p>
+                    <p id="focusScoreText">Focus Score: 0/100</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="completed" class="completed-panel">
+            <h2>✅ Completed Tasks</h2>
+            <ul id="completedList"></ul>
+        </section>
+
+    </main>
+
+    <aside class="right-panel">
+
+        <section id="today" class="right-card">
+            <h2>📅 Due Today</h2>
+            <ul id="todayList"></ul>
+        </section>
+
+        <section id="calendarPanel" class="calendar-widget right-card">
+            <div class="calendar-header">
+                <button id="prevMonth" type="button">‹</button>
+                <h2 id="calendarTitle">Month Year</h2>
+                <button id="nextMonth" type="button">›</button>
+            </div>
+
+            <div class="calendar-days">
+                <span>Sun</span>
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+            </div>
+
+            <div id="calendarGrid" class="calendar-grid"></div>
+
+            <div class="calendar-legend">
+                <p><span class="legend-dot high"></span> High</p>
+                <p><span class="legend-dot medium"></span> Medium</p>
+                <p><span class="legend-dot low"></span> Low</p>
+                <p><span class="legend-dot complete"></span> Completed</p>
+            </div>
+        </section>
+
+        <section class="ai-box right-card">
+            <h2>🤖 AI Study Assistant</h2>
+            <p>You have assignments due this week. Generate a study schedule to stay on track.</p>
+            <button type="button">Generate Study Plan ✨</button>
+        </section>
+
+        <section class="motivation right-card">
+            <h2>💬 Motivation</h2>
+            <p>“Don’t watch the clock; do what it does. Keep going.”</p>
+            <small>— Sam Levenson</small>
+        </section>
+
+    </aside>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
